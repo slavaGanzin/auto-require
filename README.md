@@ -123,6 +123,22 @@ const $ = require('auto-require')(options)
 ```
 
 
+#### 7. toRoot
+
+You can import all functions of module into root object.
+
+```js
+const options = {
+	only: ['request'],
+	toRoot: ['request']
+}
+
+const $ = require('auto-require')(options)
+
+// $.get, $.post, $.head (all function from request). But not $.request
+```
+
+
 ## What it does?
 
 It takes all modules in your `node_modules` folder by default using data from `package.json` and exports it as one module.
@@ -136,17 +152,17 @@ Quick example
 ## What about jQuery or build tools?
 
 No, you'll not need to write full module name.
-The first part of the module name will be cut in this case.    
-For example we have `gulp-pug` module. How we can access it?  
-Actually it's pretty straightforward - via `$.pug`.  
-As you can see the first part of the `gulp-pug` has been cut.  
+The first part of the module name will be cut in this case.
+For example we have `gulp-pug` module. How we can access it?
+Actually it's pretty straightforward - via `$.pug`.
+As you can see the first part of the `gulp-pug` has been cut.
 
 This tool works fine with `gulp`, `grunt`, `broccoli`.
 
 ## Other access examples
 
 - `gulp` via `$.gulp`
-- `gulp-plumber` via `$.plumber` 
+- `gulp-plumber` via `$.plumber`
 - `gulp-inline-css` via `$.inlineCss`
 - `grunt` via `$.grunt`
 - `grunt-shell` via `$.shell`

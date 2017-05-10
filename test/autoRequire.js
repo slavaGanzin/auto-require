@@ -11,7 +11,7 @@ t.test('autoRequire', t => {
   t.ok(collection.eslint)
   t.deepEqual(collection.eslint, global.eslint)
   t.ok(Object.keys(collection).length)
-  
+  t.throws(() => eslint = {})
   
   
   const collection2 = autoRequire({
@@ -27,7 +27,6 @@ t.test('autoRequire', t => {
   t.ok(collection2.CLIEngine)
   t.ok(collection2.RuleTester)
   t.ok(collection2.SourceCode)
-  
   t.ok(Object.keys(collection2).length)
   
   t.end()

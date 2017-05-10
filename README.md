@@ -105,6 +105,11 @@ const options = {
 require('auto-require')(options)
 
 // gulp and notify avaliable globaly (only)
+
+//All global imports are guarded and can't be overriden:
+gulp = {}
+// Error: gulp is already defined
+}
 ```
 
 #### 6. As

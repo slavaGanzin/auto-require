@@ -143,6 +143,21 @@ const $ = require('auto-require')(options)
 // $.get, $.post, $.head (all function from request). But not $.request
 ```
 
+#### 8. generateES6Module
+
+You can generate an ES6 module with all imports that were imported by `auto-require`.
+
+```js
+const options = {
+	only: ['lodash', 'axios'],
+	generateES6Module: 'path/to/output/module.js'
+}
+
+const $ = require('auto-require')(options)
+
+// This will generate an ES6 module at the specified path with import statements for lodash and axios.
+```
+
 
 ## What it does?
 
@@ -187,3 +202,4 @@ npm test
 ## License
 
 Licensed under [MIT](./LICENSE.md).
+

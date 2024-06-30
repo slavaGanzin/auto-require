@@ -2,6 +2,8 @@ const parseOptions = require('./lib/parseOptions')
 const parseModulesMap = require('./lib/parseModulesMap')
 const makePackageNames = require('./lib/makePackageNames')
 const requireModules = require('./lib/requireModules')
+const generateES6Module = require('./lib/generateES6Module')
+const generateES6Module = require('./lib/generateES6Module')
 const zipObject = require('lodash.zipobject')
 
 module.exports = function autoRequire (options) {
@@ -31,5 +33,14 @@ module.exports = function autoRequire (options) {
       })
     })
   }
+  if (options.generateES6Module) {
+    generateES6Module(collection, options.generateES6Module)
+  }
+
+  if (options.generateES6Module) {
+    generateES6Module(collection, options.generateES6Module)
+  }
+
   return collection
 }
+
